@@ -7,8 +7,9 @@ import React, {
 
 class Login extends Component {
   render() {
+    const { styles } = this.props
     return(
-      <View style={this.props.style}>
+      <View style={styles.container}>
         <Text>Login</Text>
         <TouchableHighlight onPress={this.props.toSignup}>
           <Text>To Signup</Text>
@@ -19,7 +20,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  style: View.propTypes.style,
+  styles: PropTypes.object,
   toSignup: PropTypes.func.isRequired
 }
 
