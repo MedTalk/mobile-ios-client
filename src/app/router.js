@@ -5,6 +5,11 @@ import Login from '../auth/login'
 import Signup from '../auth/signup'
 
 class Router extends Component {
+  getChildContext () {
+    const { route, navigator } = this.props
+    return { route, navigator }
+  }
+
   render() {
     const { route, navigator } = this.props
     switch(route.index) {
@@ -18,6 +23,11 @@ class Router extends Component {
         return null
     }
   }
+}
+
+Router.childContextTypes = {
+  route: PropTypes.object.isRequired,
+  navigator: PropTypes.object.isRequired
 }
 
 Router.propTypes = {
