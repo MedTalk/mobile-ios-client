@@ -15,7 +15,8 @@ class Router extends Component {
     switch(route.index) {
       case 0:
         return <Login styles={styles}
-                      toSignup={() => navigator.replace(routes[1])} />
+                      toSignup={() => navigator.replace(routes[1])}
+                      toWelcome={() => navigator.replace(routes[2])} />
       case 1:
         return <Signup styles={styles}
                        toLogin={() => navigator.replace(routes[0])} />
