@@ -13,7 +13,7 @@ class App extends Component {
     return(
       <Provider store={store}>
         <Navigator
-          initialRoute={routes[0]}
+          initialRoute={routes[1]}
           renderScene={this.renderScene}
         />
       </Provider>

@@ -1,7 +1,8 @@
 const routes = [
-  { name: 'Login', index: 0 },
-  { name: 'Signup', index: 1 },
-  { name: 'Welcome', index: 2 }
+  { name: 'Splash', index: 0 },
+  { name: 'Login', index: 1 },
+  { name: 'Signup', index: 2 },
+  { name: 'Welcome', index: 3 }
 ]
 
 export default routes

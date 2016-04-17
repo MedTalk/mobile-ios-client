@@ -14,16 +14,17 @@ class Router extends Component {
   render() {
     const { route, navigator } = this.props
     switch(route.index) {
-      case 0:
+      case 1:
         return <Login styles={styles}
                       toSignup={() => navigator.replace(routes[1])}
                       toWelcome={() => navigator.replace(routes[2])} />
-      case 1:
+      case 2:
         return <Signup styles={styles}
                        toLogin={() => navigator.replace(routes[0])} />
-      case 2:
+      case 3:
         return <Welcome styles={styles} />
       default:
+        // TODO: return a splash screen, which can redirect to login, or main app
         return null
     }
   }
