@@ -3,6 +3,7 @@ import routes from './routes'
 import styles from '../assets/styles'
 import Login from '../auth/login'
 import Signup from '../auth/signup'
+import Welcome from '../main/welcome'
 
 class Router extends Component {
   getChildContext () {
@@ -20,6 +21,8 @@ class Router extends Component {
       case 1:
         return <Signup styles={styles}
                        toLogin={() => navigator.replace(routes[0])} />
+      case 2:
+        return <Welcome styles={styles} />
       default:
         return null
     }

@@ -5,7 +5,9 @@ import React, {
   Text,
   TextInput,
   PropTypes } from 'react-native'
+import { connect } from 'react-redux'
 import { POST } from '../networks/base'
+import { setToken } from './authToken'
 
 class Login extends Component {
   constructor(props) {
@@ -21,7 +23,8 @@ class Login extends Component {
     const credential = { email, password }
     const success = response => {
       const AUTHORIZATION = response.headers.map.authorization[0]
-      console.log(AUTHORIZATION)
+      this.props.setToken(AUTHORIZATION)
+      this.props.toWelcome()
     }
     const failure = () => console.warn("Login Error")
     POST("login", credential).then(response => response.ok ? success(response) : failure())
@@ -58,4 +61,8 @@ Login.propTypes = {
   toWelcome: PropTypes.func.isRequired
 }
 
-export default Login
+const dispatchToProps = dispatch => ({
+  setToken: token => dispatch(setToken(token))
+})
+
+export default connect(null, dispatchToProps)(Login)

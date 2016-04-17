@@ -1,6 +1,8 @@
 import React, { Component, Navigator } from 'react-native'
+import { Provider } from 'react-redux'
 import routes from './routes'
 import Router from './router'
+import store from '../store'
 
 class App extends Component {
   renderScene(route, navigator) {
@@ -9,10 +11,12 @@ class App extends Component {
 
   render() {
     return(
-      <Navigator
-        initialRoute={routes[0]}
-        renderScene={this.renderScene}
-      />
+      <Provider store={store}>
+        <Navigator
+          initialRoute={routes[0]}
+          renderScene={this.renderScene}
+        />
+      </Provider>
     )
   }
 }
