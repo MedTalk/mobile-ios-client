@@ -1,2 +1,5 @@
 /node_modules
 /ios/build
+/ios/main.jsbundle
+/ios/medtalk.xcodeproj/project.xcworkspace/
+/ios/medtalk.xcodeproj/xcuserdata/
