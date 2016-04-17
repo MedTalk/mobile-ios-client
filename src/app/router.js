@@ -16,11 +16,11 @@ class Router extends Component {
     switch(route.index) {
       case 1:
         return <Login styles={styles}
-                      toSignup={() => navigator.replace(routes[1])}
-                      toWelcome={() => navigator.replace(routes[2])} />
+                      toSignup={() => navigator.replace(routes[2])}
+                      toWelcome={() => navigator.replace(routes[3])} />
       case 2:
         return <Signup styles={styles}
-                       toLogin={() => navigator.replace(routes[0])} />
+                       toLogin={() => navigator.replace(routes[1])} />
       case 3:
         return <Welcome styles={styles} />
       default:
